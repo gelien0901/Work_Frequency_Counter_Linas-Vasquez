@@ -4,7 +4,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sortingOrder = $_POST['sorting_order']; 
     $displayLimit = $_POST['display_limit'];
 
-     $stopWords = ['and', 'in', 'of', 'to', 'a', 'is', 'that', 'it', 'with', 'as', 'for', 'was', 'on', 'at', 'by', 'an'];
+    $stopWords = ['and', 'in', 'of', 'to', 'a', 'is', 'that', 'it', 'with', 'as', 'for', 'was', 'on', 'at', 'by', 'an'];
+
+    function tokenizeText($text) {
+        $words = str_word_count(strtolower($text), 1);
+        return $words;
     }
 ?>
 
