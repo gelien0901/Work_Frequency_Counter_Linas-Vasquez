@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $wordFrequencies = array_count_values($filteredWords);
         return $wordFrequencies;
     }
-    
+    $words = tokenizeText($inputText);
 ?>
 
 <!DOCTYPE html>
