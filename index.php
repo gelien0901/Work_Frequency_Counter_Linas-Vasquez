@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return $wordFrequencies;
     }
     $words = tokenizeText($inputText);
+    $wordFrequencies = calculateWordFrequencies($words, $stopWords);
 ?>
 
 <!DOCTYPE html>
