@@ -17,6 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $words = tokenizeText($inputText);
     $wordFrequencies = calculateWordFrequencies($words, $stopWords);
+
+    if ($sortingOrder === 'asc') {
+        asort($wordFrequencies);
+    } else {
+        arsort($wordFrequencies);
+    }
+    
 ?>
 
 <!DOCTYPE html>
