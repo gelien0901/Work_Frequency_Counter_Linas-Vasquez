@@ -10,6 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $words = str_word_count(strtolower($text), 1);
         return $words;
     }
+    function calculateWordFrequencies($words, $stopWords) {
+        $filteredWords = array_diff($words, $stopWords);
+        $wordFrequencies = array_count_values($filteredWords);
+        return $wordFrequencies;
+    }
+    
 ?>
 
 <!DOCTYPE html>
