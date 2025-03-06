@@ -24,6 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         arsort($wordFrequencies);
     }
     $wordFrequencies = array_slice($wordFrequencies, 0, $displayLimit, true);
+
+    echo '<h2>Word Frequencies</h2>';
+    echo '<table>';
+    echo '<tr><th>Word</th><th>Frequency</th></tr>';
+    foreach ($wordFrequencies as $word => $frequency) {
+        echo '<tr><td>' . htmlspecialchars($word) . '</td><td>' . htmlspecialchars($frequency) . '</td></tr>';
+    }
+    echo '</table>';
+    }
 ?>
 
 <!DOCTYPE html>
